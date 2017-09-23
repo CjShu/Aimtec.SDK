@@ -25,11 +25,11 @@
             SpellBook.OnStopCast += this.SpellBook_OnStopCast;
 
 
-            this.Config = new Menu("HealthPred", "HealthPrediction")
+            this.Config = new Menu("HealthPred", "血量預測")
             {
-                new MenuSeperator("Seperator", "Delays are 0 by default"),
-                new MenuSlider("ExtraDelayRanged", "Extra Ranged Delay", 0, 0, 150).SetToolTip("Delay for processing minion ranged attacks"),
-                new MenuSlider("ExtraDelayMelee", "Extra Melee Attacks Delay", 0, 0, 150).SetToolTip("Delay for processing minion melee attacks")
+                new MenuSeperator("Seperator", "延遲調整"),
+                new MenuSlider("ExtraDelayRanged", "額外遠程延遲", 0, 0, 150).SetToolTip("Delay for processing minion ranged attacks"),
+                new MenuSlider("ExtraDelayMelee", "額外進戰攻擊延遲", 0, 0, 150).SetToolTip("Delay for processing minion melee attacks")
             };
 
             AimtecMenu.Instance.Add(this.Config);

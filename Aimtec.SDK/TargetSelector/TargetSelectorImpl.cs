@@ -10,6 +10,7 @@
     using Aimtec.SDK.Menu;
     using Aimtec.SDK.Menu.Components;
     using Aimtec.SDK.Util;
+    using Aimtec.SDK.Utils;
 
     using NLog;
 
@@ -421,36 +422,36 @@
         {
             Logger.Info("Constructing Menu for default Target Selector");
 
-            this.Config = new Menu("Aimtec.TS", "Target Selector");
+            this.Config = new Menu("Aimtec.TS", "目標選擇");
 
-            var weights = new Menu("WeightsMenu", "Weights");
+            var weights = new Menu("WeightsMenu", "優先度");
             this.Config.Add(weights);
 
-            var targetsMenu = new Menu("TargetsMenu", "Targets");
+            var targetsMenu = new Menu("TargetsMenu", "目標");
             foreach (var enemy in ObjectManager.Get<Obj_AI_Hero>().Where(x => x.IsEnemy))
             {
-                targetsMenu.Add(new MenuSlider("priority" + enemy.ChampionName, enemy.ChampionName, (int)this.GetDefaultPriority(enemy), 1, 5));
+                targetsMenu.Add(new MenuSlider("priority" + enemy.ChampionName, enemy.ChampionName.ToTw(), (int)this.GetDefaultPriority(enemy), 1, 5));
             }
             this.Config.Add(targetsMenu);
 
-            var drawings = new Menu("Drawings", "Drawings")
+            var drawings = new Menu("Drawings", "顯示")
             {
-                new MenuBool("IndicateSelected", "Indicate Selected Target"),
-                new MenuBool("ShowOrder", "Show Target Order"),
-                new MenuBool("ShowOrderAuto", "Auto range only")
+                new MenuBool("IndicateSelected", "顯示已選定目標"),
+                new MenuBool("ShowOrder", "顯示目標"),
+                new MenuBool("ShowOrderAuto", "顯示自動範圍")
             };
             this.Config.Add(drawings);
 
-            var miscMenu = new Menu("Misc", "Misc")
+            var miscMenu = new Menu("Misc", "其他")
             {
-                new MenuBool("FocusSelected", "Focus Selected Target"),
-                new MenuBool("ForceSelected", "Force Selected (Assasin)", false).SetToolTip("Only Attack Selected Target")
+                new MenuBool("FocusSelected", "攻擊選定目標"),
+                new MenuBool("ForceSelected", "攻擊刺客目標", false).SetToolTip("Only Attack Selected Target")
             };
 
             this.Config.Add(miscMenu);
 
-            this.Config.Add(new MenuBool("UseWeights", "Use Weights"));
-            this.Config.Add(new MenuList("TsMode", "Mode", Enum.GetNames(typeof(TargetSelectorMode)), 0));
+            this.Config.Add(new MenuBool("UseWeights", "使用優先度"));
+            this.Config.Add(new MenuList("TsMode", "模式", Enum.GetNames(typeof(TargetSelectorMode)), 0));
         }
 
         private void CreateWeights()

@@ -45,26 +45,26 @@
         {
             Log.Info().Message("Loading Global Keys").Write();
 
-            KeyConfig = new Menu("Keys", "Keys");
+            KeyConfig = new Menu("Keys", "按鍵");
 
-            KeyConfig.Add(new MenuSeperator("seperator", "Main Keys"));
+            KeyConfig.Add(new MenuSeperator("seperator", "走砍 按鍵"));
 
-            ComboKey = new GlobalKey("Combo", "Combo", KeyCode.Space, KeybindType.Press, true);
-            MixedKey = new GlobalKey("Mixed", "Mixed", KeyCode.C, KeybindType.Press, true);
-            WaveClearKey = new GlobalKey("WaveClear", "Waveclear", KeyCode.V, KeybindType.Press, true);
-            LastHitKey = new GlobalKey("LastHit", "LastHit", KeyCode.X, KeybindType.Press, true);
+            ComboKey = new GlobalKey("Combo", "連招", KeyCode.Space, KeybindType.Press, true);
+            MixedKey = new GlobalKey("Mixed", "騷擾清線", KeyCode.C, KeybindType.Press, true);
+            WaveClearKey = new GlobalKey("WaveClear", "清線", KeyCode.V, KeybindType.Press, true);
+            LastHitKey = new GlobalKey("LastHit", "尾兵", KeyCode.X, KeybindType.Press, true);
 
-            KeyConfig.Add(new MenuSeperator("seperator2", "Additional Keys"));
+            KeyConfig.Add(new MenuSeperator("seperator2", "額外按鍵"));
 
-            HarassKey = new GlobalKey("Harass", "Harass", KeyCode.H, KeybindType.Toggle, false);
-            FreezeKey = new GlobalKey("Freeze", "Freeze", KeyCode.M, KeybindType.Toggle, false);
-            BurstKey = new GlobalKey("Burst", "Burst", KeyCode.K, KeybindType.Press, false);
-            FleeKey = new GlobalKey("Flee", "Flee", KeyCode.L, KeybindType.Press, false);
-            TowerDiveKey = new GlobalKey("TowerDive", "Tower Dive", KeyCode.T, KeybindType.Press, false);
+            HarassKey = new GlobalKey("Harass", "騷擾", KeyCode.H, KeybindType.Toggle, false);
+            FreezeKey = new GlobalKey("Freeze", "控線", KeyCode.M, KeybindType.Toggle, false);
+            BurstKey = new GlobalKey("Burst", "爆發", KeyCode.K, KeybindType.Press, false);
+            FleeKey = new GlobalKey("Flee", "逃跑", KeyCode.Z, KeybindType.Press, false);
+            TowerDiveKey = new GlobalKey("TowerDive", "翻牆", KeyCode.T, KeybindType.Press, false);
 
             ComboNoOrbwalkKey = new GlobalKey(
                 "ComboNoOrbwalk",
-                "Combo - No Orbwalk",
+                "連招 - 不走砍",
                 KeyCode.J,
                 KeybindType.Toggle,
                 false);

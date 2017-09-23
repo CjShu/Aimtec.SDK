@@ -1,6 +1,11 @@
 ﻿namespace Aimtec.SDK.Menu.Config
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     using Aimtec.SDK.Menu.Components;
+    using Aimtec.SDK.Utils;
 
     using NLog.Fluent;
 
@@ -11,7 +16,7 @@
         internal AimtecMenu()
             : base("Aimtec.Menu", "Aimtec", true)
         {
-            this.Add(new MenuBool("Aimtec.Debug", "Debugging", false, true));
+            this.Add(new MenuBool("Aimtec.Debug", "開發調適模式", false, true));
 
             Log.Info().Message("Aimtec menu created").Write();
         }

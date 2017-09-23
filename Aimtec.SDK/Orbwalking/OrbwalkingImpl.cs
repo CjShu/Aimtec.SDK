@@ -837,38 +837,38 @@ namespace Aimtec.SDK.Orbwalking
 
         private void Initialize()
         {
-            this.Config = new Menu("Orbwalker", "Orbwalker")
+            this.Config = new Menu("Orbwalker", "走砍 設置")
             {
-                new Menu("Advanced", "Advanced")
+                new Menu("Advanced", "高級設定")
                 {
-                    new MenuSlider("AttackDelayReduction", "Attack Delay Reduction", 90, 0, 180, true)
+                    new MenuSlider("AttackDelayReduction", "攻擊延遲減少", 90, 0, 180, true)
                 },
 
-                new Menu("Attacking", "Attacking") {
+                new Menu("Attacking", "攻擊AA設定") {
 
-                    new MenuSlider("ExtraWindup", "Additional Windup", Game.Ping / 2 + 10, 0, 200, true),
-                    new MenuBool("NoBlindAA", "No AA when Blind", true, true),
-                    new MenuBool("NoCounterStrikeAA", "No AA against E'ing Jax", true, true)
+                    new MenuSlider("ExtraWindup", "走砍後搖", Game.Ping / 2 + 10, 0, 200, true),
+                    new MenuBool("NoBlindAA", "致盲 不 AA", true, true),
+                    new MenuBool("NoCounterStrikeAA", "不 AA 防止賈克斯 E", true, true)
                 },
 
-                new Menu("Farming", "Farming")
+                new Menu("Farming", "清線")
                 {
-                    new MenuSlider("FarmDelay", "Farm Delay", 0, 0, 120, true).SetToolTip("Additional Delay for auto attack when farming"),
-                    new MenuBool("AttackPlants", "Attack Plants", false, true),
-                    new MenuBool("AttackWards", "Attack Wards", true, true),
-                    new MenuBool("AttackBarrels", "Attack Barrels", true, true)
+                    new MenuSlider("FarmDelay", "清線延遲", 0, 0, 120, true).SetToolTip("Additional Delay for auto attack when farming"),
+                    new MenuBool("AttackPlants", "攻擊叢林植物", false, true),
+                    new MenuBool("AttackWards", "攻擊守衛眼", true, true),
+                    new MenuBool("AttackBarrels", "攻擊GP 桶子", true, true)
                 },
 
-                new Menu("Misc", "Misc")
+                new Menu("Misc", "其他")
                 {
-                    new MenuSlider("HoldPositionRadius", "Hold Radius", 50, 0, 400, true)
+                    new MenuSlider("HoldPositionRadius", "不動半徑", 50, 0, 400, true)
                 },
 
-                new Menu("Drawings", "Drawings")
+                new Menu("Drawings", "顯示")
                 {
-                    new MenuBool("DrawAttackRange", "Draw Attack Range"),
-                    new MenuBool("DrawHoldRadius", "Draw Hold Radius"),
-                    new MenuBool("DrawKillableMinion", "Indicate Killable")
+                    new MenuBool("DrawAttackRange", "顯示攻擊範圍"),
+                    new MenuBool("DrawHoldRadius", "顯示不移動半徑"),
+                    new MenuBool("DrawKillableMinion", "顯示可殺死目標")
                 }
             };
 
